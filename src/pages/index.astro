@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Base.astro';
+import { Debug } from 'astro:components'; 
+const response = await fetch('https://www.flickr.com/services/rest/?method=flickr.photos.getPopular&api_key=542c05cbddd49bb21bacceaa929c8ab8&user_id=83528065%40N00&extras=url_o&format=json&nojsoncallback=1');
+const photos = await response.json();
+
+
+---
+<Layout>
+    <Debug {photos}/>
+</Layout>
